@@ -296,7 +296,7 @@ public class RedBlackBST<Key extends Comparable<Key>, Value> {
         assert (h != null);
         assert isRed(h) && !isRed(h.right) && !isRed(h.right.left);
         flipColors(h);
-        if (isRed(h.left.left)) { 
+        if (!isRed(h.left.left)) { 
             h = rotateRight(h);
             // flipColors(h);
         }
